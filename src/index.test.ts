@@ -174,5 +174,52 @@ describe("distributeBoxesEvenly", () => {
     expect(result).toEqual(expected);
   });
 
-    
+  it("should result final be 2 boxes in each stack", () => {
+    let clawPos = 6;
+    const boxes = [2, 2, 2, 1, 3, 0, 4, 2];
+    let boxInClaw = false;
+
+    const result = [];
+    const avgBoxesPerStack = 2;
+
+    while (
+      boxes.some((stackBoxes) => stackBoxes !== avgBoxesPerStack) &&
+      result.length < 200
+    ) {
+      const action = solve(clawPos, boxes, boxInClaw);
+
+      if (!["PICK", "RIGHT", "LEFT", "PLACE"].includes(action)) {
+        break;
+      } else if (action === "PICK") {
+        boxInClaw = true;
+        boxes[clawPos] -= 1;
+      } else if (action === "PLACE") {
+        boxInClaw = false;
+        boxes[clawPos] += 1;
+      } else if (action === "RIGHT") {
+        clawPos += 1;
+      } else if (action === "LEFT") {
+        clawPos -= 1;
+      }
+
+      result.push(action);
+    }
+    const expected = [
+      "PICK",
+      "LEFT",
+      "PLACE",
+      "LEFT",
+      "PICK",
+      "LEFT",
+      "PLACE",
+      "RIGHT",
+      "RIGHT",
+      "RIGHT",
+      "PICK",
+      "LEFT",
+      "PLACE",
+    ];
+
+    expect(result).toEqual(expected);
+  });
 });
