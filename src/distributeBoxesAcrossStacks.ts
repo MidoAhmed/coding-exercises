@@ -4,13 +4,13 @@
  * @param {number} totalStacks - The total number of stacks to distribute the boxes across.
  * @returns {number[]} An array representing the number of boxes in each stack.
  */
-export function distributeBoxesEvenly(totalBoxes: number, totalStacks: number): number[] {
+export function distributeBoxesAcrossStacks(totalBoxes: number, totalStacks: number): number[] {
     // Calculate the number of boxes per stack (quotient) and the remainder
     const boxesPerStack = Math.floor(totalBoxes / totalStacks);
     const remainder = totalBoxes % totalStacks;
   
     // Initialize an array to represent the number of boxes per stack
-    const boxesInStacks = [];
+    const boxesInStacks: number[] = [];
   
     // Distribute boxes evenly
     for (let i = 0; i < totalStacks; i++) {

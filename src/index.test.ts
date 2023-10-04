@@ -455,7 +455,7 @@ describe("distributeBoxesEvenly", () => {
       "LEFT",
       "PLACE",
     ];
-    console.debug(result);
+
     expect(result).toEqual(expected);
   });
 });
