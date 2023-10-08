@@ -1,4 +1,4 @@
-import { sumOfDigits } from "..";
+import { sumOfDigits } from "../sumOfDigits";
 
 describe("sumOfDigits", () => {
   // Should return 0 for input 0
