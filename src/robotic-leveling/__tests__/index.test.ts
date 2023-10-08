@@ -1,4 +1,4 @@
-import { solve } from ".";
+import { solve } from "..";
 
 describe("distributeBoxesEvenly", () => {
   // Return "PLACE" if boxInClaw is true and boxes[clawPos] < avgBoxesPerStack

@@ -1,4 +1,4 @@
-import { distributeBoxesAcrossStacks } from "./distributeBoxesAcrossStacks";
+import { distributeBoxesAcrossStacks } from "../distributeBoxesAcrossStacks";
 
 describe("distributeBoxesAcrossStacks", () => {
   // Distributes boxes evenly among stacks with equal number of boxes and stacks
